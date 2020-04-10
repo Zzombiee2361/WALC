@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'Install Dependencies'
+    docker {
+      image 'node:lts'
     }
 
   }
@@ -9,7 +9,7 @@ pipeline {
     stage('Install Dependencies') {
       agent {
         node {
-          label 'nodejs'
+          label 'any'
         }
 
       }
@@ -21,7 +21,7 @@ pipeline {
     stage('Dist Linux') {
       agent {
         node {
-          label 'nodejs'
+          label 'any'
         }
 
       }
